@@ -1,8 +1,8 @@
-package com.ms.email.consumers;
+package com.ms.fenrir.consumers;
 
-import com.ms.email.dtos.EmailRecordDto;
-import com.ms.email.models.EmailModel;
-import com.ms.email.services.EmailService;
+import com.ms.fenrir.dtos.EmailRecordDto;
+import com.ms.fenrir.models.EmailModel;
+import com.ms.fenrir.services.EmailService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.BeanUtils;
 import org.springframework.messaging.handler.annotation.Payload;
@@ -17,7 +17,7 @@ public class EmailConsumer {
         this.emailService = emailService;
     }
 
-    @RabbitListener(queues = "${broker.queue.email.name}" )
+    @RabbitListener(queues = "${broker.queue.email.name}")
     public void listenEmailQueue(@Payload EmailRecordDto emailRecordDto) {
         var emailModel = new EmailModel();
         BeanUtils.copyProperties(emailRecordDto, emailModel);

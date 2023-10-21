@@ -1,6 +1,6 @@
-package com.ms.email.models;
+package com.ms.fenrir.models;
 
-import com.ms.email.enums.StatusEmail;
+import com.ms.fenrir.enums.StatusEmail;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -13,7 +13,7 @@ public class EmailModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID emailId;
     private UUID userId;
     private String emailFrom;

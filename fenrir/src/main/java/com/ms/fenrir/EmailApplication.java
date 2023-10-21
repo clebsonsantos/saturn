@@ -1,4 +1,4 @@
-package com.ms.email;
+package com.ms.fenrir;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

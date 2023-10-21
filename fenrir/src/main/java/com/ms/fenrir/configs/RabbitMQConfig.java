@@ -1,4 +1,4 @@
-package com.ms.email.configs;
+package com.ms.fenrir.configs;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.amqp.core.Queue;
@@ -23,6 +23,5 @@ public class RabbitMQConfig {
         ObjectMapper objectMapper = new ObjectMapper();
         return new Jackson2JsonMessageConverter(objectMapper);
     }
-
 
 }

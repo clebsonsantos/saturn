@@ -1,8 +1,8 @@
-package com.ms.email.services;
+package com.ms.fenrir.services;
 
-import com.ms.email.enums.StatusEmail;
-import com.ms.email.models.EmailModel;
-import com.ms.email.repositories.EmailRepository;
+import com.ms.fenrir.enums.StatusEmail;
+import com.ms.fenrir.models.EmailModel;
+import com.ms.fenrir.repositories.EmailRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
