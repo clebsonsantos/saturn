@@ -1,4 +1,4 @@
-package com.ms.user.dtos;
+package com.ms.titan.dtos;
 
 import java.util.UUID;
 

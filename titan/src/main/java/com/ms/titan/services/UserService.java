@@ -1,10 +1,11 @@
-package com.ms.user.services;
+package com.ms.titan.services;
 
-import com.ms.user.models.UserModel;
-import com.ms.user.producers.UserProducer;
-import com.ms.user.repositories.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.ms.titan.models.UserModel;
+import com.ms.titan.producers.UserProducer;
+import com.ms.titan.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -18,7 +19,7 @@ public class UserService {
     }
 
     @Transactional
-    public UserModel save(UserModel userModel){
+    public UserModel save(UserModel userModel) {
         userModel = userRepository.save(userModel);
         userProducer.publishMessageEmail(userModel);
         return userModel;

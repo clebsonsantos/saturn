@@ -1,10 +1,11 @@
-package com.ms.user.producers;
+package com.ms.titan.producers;
 
-import com.ms.user.dtos.EmailDto;
-import com.ms.user.models.UserModel;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import com.ms.titan.dtos.EmailDto;
+import com.ms.titan.models.UserModel;
 
 @Component
 public class UserProducer {
@@ -23,7 +24,8 @@ public class UserProducer {
         emailDto.setUserId(userModel.getUserId());
         emailDto.setEmailTo(userModel.getEmail());
         emailDto.setSubject("Cadastro realizado com sucesso!");
-        emailDto.setText(userModel.getName() + ", seja bem vindo(a)! \nAgradecemos o seu cadastro, aproveite agora todos os recursos da nossa plataforma!");
+        emailDto.setText(userModel.getName()
+                + ", seja bem vindo(a)! \nAgradecemos o seu cadastro, aproveite agora todos os recursos da nossa plataforma!");
 
         rabbitTemplate.convertAndSend("", routingKey, emailDto);
     }

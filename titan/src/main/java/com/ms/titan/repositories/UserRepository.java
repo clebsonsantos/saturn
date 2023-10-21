@@ -1,7 +1,8 @@
-package com.ms.user.repositories;
+package com.ms.titan.repositories;
 
-import com.ms.user.models.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.ms.titan.models.UserModel;
 
 import java.util.UUID;
 
